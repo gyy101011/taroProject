@@ -1,19 +1,20 @@
-import { logout } from 'src/service/user';
-import { clearUserInfo } from 'src/store/modules/user';
+import { logout } from '../../service/user';
+import { clearUserInfo } from '../../store/modules/user';
 import { View } from '@tarojs/components';
 import Taro from '@tarojs/taro';
 import { useAppDispatch, useAppSelector } from 'src/store';
 import { AtButton, AtList, AtListItem } from 'taro-ui';
 
-
 export default function My() {
   // 获取Redux中用户数据
   const user = useAppSelector((state) => state.user.userInfo);
+
   const dispatch = useAppDispatch();
 
   const handleClick = () => {
-    Taro.navigateTo({ url: '/pages/login/login' });
-  };
+    Taro.navigateTo({ url: '/pages/login/login' })
+  }
+
   const handleQuitClick = () => {
     Taro.showModal({
       title: '你确定要退出吗？',
@@ -32,21 +33,21 @@ export default function My() {
             });
           } else {
             Taro.showToast({
-              title: response.msg || '退出登陆失败',
+              title: response.msg || '退出失败',
               icon: 'none',
             });
           }
         }
-      },
+      }
+    })
+  }
 
-    });
-  };
   return (
     <View>
       <View>用户信息:{JSON.stringify(user)}</View>
-      <AtButton type="primary" onClick={handleQuitClick}>清理用户信息</AtButton>
+      <AtButton type='primary' onClick={handleQuitClick}>清理用户信息</AtButton>
       <AtList>
-        <AtListItem title="去登录" onClick={handleClick} arrow="right" />
+        <AtListItem title='去登录' onClick={handleClick} arrow='right' />
       </AtList>
     </View>
   );

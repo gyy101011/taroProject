@@ -1,11 +1,12 @@
 import { TypedUseSelectorHook, useDispatch, useSelector } from 'react-redux';
 import { configureStore } from '@reduxjs/toolkit';
+
 import userReducer from './modules/user';
 
 const store = configureStore({
-    reducer: {
-        user: userReducer
-    }
+  reducer: {
+    user: userReducer
+  }
 });
 //从store 本身推断出RootState'AppDispatch类型
 export type RootState = ReturnType<typeof store.getState>

@@ -1,18 +1,39 @@
-import { View, Text } from '@tarojs/components';
-import { AtButton } from 'taro-ui';
-
-import 'taro-ui/dist/style/components/button.scss'; // 按需引入
+import { View } from '@tarojs/components';
+import { useEffect, useState } from 'react';
+import { getIndexNotice, getNoticeSwiper } from '../../service/notice'
+import Navbar from './components/CustomNavbar';
 import './index.scss';
+import Notice from './components/Notice';
+import Swiper from './components/Swiper';
+import Panel from './components/Panel'
 
 export default function Index() {
+  const [noticeList, setNoticeList] = useState<SwiperItem[]>([]);
+  const [swiper, setSwiper] = useState<SwiperItem[]>([]);
+
+  const getIndexNoticeFunction = async () => {
+    const res = await getIndexNotice();
+    if (res.code === 0) {
+      setNoticeList(res.data)
+    }
+  };
+  const getSwiperFunction = async () => {
+    const res = await getNoticeSwiper();
+    if (res.code === 0) {
+      setSwiper(res.data)
+    }
+  }
+
+  useEffect(() => {
+    getIndexNoticeFunction();
+    getSwiperFunction()
+  }, []);
   return (
-    <View>
-      <Text>Hello world!</Text>
-      <AtButton type="primary">I need Taro UI</AtButton>
-      <Text>Taro UI 支持 Vue 了吗？</Text>
-      <AtButton type="primary" circle>支持</AtButton>
-      <Text>共建？</Text>
-      <AtButton type="secondary" circle>来</AtButton>
+    <View className="index">
+      <Navbar />
+      <Notice noticeList={noticeList} />
+      <Swiper swiperList={swiper} />
+      <Panel />
     </View>
   );
 }
