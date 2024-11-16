@@ -1,16 +1,16 @@
-import { View, Text } from '@tarojs/components';
-import Taro from '@tarojs/taro';
-import './nav.scss';
-//引入样式文件
+import { View ,Text} from "@tarojs/components";
+import Taro from "@tarojs/taro";
+import './nav.scss'
+
 const Navbar = () => {
-  //获取屏幕边界到安全区城的距离
   const safeAreaInsets = Taro.getSystemInfoSync().safeArea;
-  //点击搜索框跳转搜索贞面
+
   const handleSearchClick = () => {
     Taro.navigateTo({
       url: '/pages/search/search',
     });
   };
+
   return (
     <View className='navbar' style={{ paddingTop: safeAreaInsets!.top + 10 + 'px' }}>
       <View className='logo'>
@@ -23,4 +23,5 @@ const Navbar = () => {
     </View>
   );
 };
+
 export default Navbar;

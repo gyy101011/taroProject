@@ -1,6 +1,6 @@
-import { View, Text, Swiper, SwiperItem, Navigator } from '@tarojs/components';
-import './notice.scss';
-//引入样式文件
+import { View , Text, Swiper, SwiperItem , Navigator} from "@tarojs/components";
+import './notice.scss'
+
 interface NoticeProps {
   noticeList: SwiperItem[];
 }
@@ -8,8 +8,7 @@ const Notice = ({ noticeList }: NoticeProps) => {
   return (
     <View className='notice' style={{ display: noticeList.length ? 'flex' : 'none' }}>
       <View className='left'>
-        <Text className=' at-icon at-icon-bell' style={{ fontSize: '16px', color: '#1296db' }}>
-        </Text>
+        <Text className='at-icon at-icon-bell' style={{ fontSize: '16px', color: '#1296db' }}></Text>
         <Text className='text'>公告</Text>
       </View>
       <View className='center'>
@@ -24,10 +23,7 @@ const Notice = ({ noticeList }: NoticeProps) => {
         </Swiper>
       </View>
       <Navigator url='/pages/notice/notice' className='right'>
-        <Text className='icon-right at-icon chevron-right' style={{
-          fontSize: '16px', color: '#333'
-        }}
-        ></Text>
+        <Text className='icon-right at-icon chevron-right' style={{ fontSize: '16px', color: '#333' }}></Text>
       </Navigator>
     </View>
   );

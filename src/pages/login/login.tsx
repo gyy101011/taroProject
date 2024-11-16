@@ -1,12 +1,12 @@
 import Taro from '@tarojs/taro'
-import { phoneLogin, sendCode, myWxLogin, getUserInfo } from '@/service/user'
-import { isCodeAvailable, isPhoneAvailable } from "@/utils/validate"
-import { useAppDispatch } from "@/store"
-import { setUserInfo } from "@/store/modules/user"
+import { phoneLogin, sendCode, myWxLogin, getUserInfo } from '../../service/user'
+import { isCodeAvailable, isPhoneAvailable } from "../../utils/validate"
+// import { useAppDispatch } from "@/store"
+import { setUserInfo } from "../../store/modules/user"
 import { View, Input, Text, Button } from "@tarojs/components"
 import { useEffect, useState } from "react"
+import { useAppDispatch } from '../../store'
 import './login.scss'
-
 
 const Login = () => {
   const dispatch = useAppDispatch();
@@ -67,6 +67,19 @@ const Login = () => {
     }
   };
 
+  //new add....
+  const navigateToUrl = () => {
+    const pages = Taro.getCurrentPages();
+    if (pages.length > 1) {
+      Taro.navigateBack();
+    } else {
+      Taro.switchTab({
+        url: '/pages/index/index',
+      });
+    }
+  };
+  //..................
+
   const handleLoginClick = async () => {
     if (!form.phone || !isPhoneAvailable(form.phone)) {
       Taro.showToast({
@@ -93,9 +106,7 @@ const Login = () => {
         icon: 'success',
       });
 
-      Taro.switchTab({
-        url: '/pages/index/index',
-      });
+      navigateToUrl();
     } else {
       Taro.showToast({
         title: res.msg,
@@ -132,9 +143,7 @@ const Login = () => {
 
           Taro.setStorageSync('token', wxLoginRes.data.accessToken);
           getLoginUserInfo();
-          Taro.switchTab({
-            url: '/pages/index/index',
-          });
+          navigateToUrl();
         } else {
           Taro.showToast({
             title: wxLoginRes.msg,
@@ -157,6 +166,7 @@ const Login = () => {
   const handleInputPhone = (e) => {
     setForm({ ...form, phone: e.target.value });
   };
+
 
   return (
     <View className='loginPage'>

@@ -10,9 +10,9 @@ import {
   AtTag,
   AtTextarea
 } from 'taro-ui';
-import { useAppDispatch, useAppSelector } from '@/store';
-import { getTagsList, getCategoryList, contributeResource } from '@/service/contribute';
-import { clearUserInfo } from '@/store/modules/user';
+import { useAppDispatch, useAppSelector } from '../../store';
+import { getTagsList, getCategoryList, contributeResource } from '../../service/contribute';
+import { clearUserInfo } from '../../store/modules/user';
 import Taro, { useLoad } from '@tarojs/taro';
 import './contribute.scss'
 

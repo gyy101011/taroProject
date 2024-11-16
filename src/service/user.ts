@@ -1,4 +1,4 @@
-import { http } from "@/utils/http";
+import { http } from "../utils/http";
 
 export const sendCode = (phone: string) => {
   return http<null>({
