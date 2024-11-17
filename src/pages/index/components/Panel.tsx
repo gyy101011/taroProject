@@ -1,7 +1,6 @@
-import { View, Navigator, Image, Text } from "@tarojs/components";
-import { useState } from "react";
+import { View, Navigator, Image, Text } from '@tarojs/components';
+import { useState } from 'react';
 import './panel.scss';
-
 
 const Panel = () => {
   const [panType] = useState([
@@ -26,6 +25,7 @@ const Panel = () => {
       img: 'https://cloud.189.cn/web/logo.ico',
     },
   ]);
+
   return (
     <View className='category'>
       {panType.map((item) => (
@@ -42,5 +42,4 @@ const Panel = () => {
     </View>
   );
 };
-
 export default Panel;

@@ -4,7 +4,7 @@ import Taro, { useLoad } from "@tarojs/taro";
 import { useEffect, useState } from "react";
 import { getIndexResourceList } from "../../service/resource";
 import NoData from "../../components/noData/noData";
-import ResourceItem from "../index/components/resourceItem/resourceItem";
+import ResourceItem from "../../components/resourceItem/resourceItem";
 import './searchResult.scss'
 
 

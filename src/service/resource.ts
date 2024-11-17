@@ -1,4 +1,5 @@
 import { http } from '../utils/http'
+
 export type IndexResourceReturnType = {
   list: IndexResourceType[]
   total: number

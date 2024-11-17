@@ -1,4 +1,4 @@
-import { Swiper, SwiperItem, View , Navigator , Image ,Text} from "@tarojs/components";
+import { Swiper, SwiperItem, View, Navigator, Image, Text } from "@tarojs/components";
 import { useState } from "react";
 import './swiper.scss'
 

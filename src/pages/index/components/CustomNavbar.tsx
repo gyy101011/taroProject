@@ -1,10 +1,11 @@
-import { View ,Text} from "@tarojs/components";
-import Taro from "@tarojs/taro";
-import './nav.scss'
+import { View, Text } from '@tarojs/components';
+import Taro from '@tarojs/taro';
+import './nav.scss';//引入样式文件
 
 const Navbar = () => {
+  //获取屏幕边界到安全区域的距离
   const safeAreaInsets = Taro.getSystemInfoSync().safeArea;
-
+  //点击搜索框跳转搜索页面
   const handleSearchClick = () => {
     Taro.navigateTo({
       url: '/pages/search/search',

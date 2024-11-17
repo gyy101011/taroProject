@@ -1,6 +1,5 @@
-import { View, Text, RichText, Navigator, ScrollView } from '@tarojs/components';
+import { View, RichText, Navigator, ScrollView } from '@tarojs/components';
 import { useEffect, useState } from 'react';
-
 import { getNoticePage } from '../../service/notice';
 import Taro from '@tarojs/taro';
 import './notice.scss';

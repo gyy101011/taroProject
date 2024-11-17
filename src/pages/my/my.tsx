@@ -1,5 +1,5 @@
-import { logout } from 'src/service/user';
-import { clearUserInfo } from 'src/store/modules/user';
+import { logout } from '../../service/user';
+import { clearUserInfo } from '../../store/modules/user';
 import { View } from '@tarojs/components';
 import Taro from '@tarojs/taro';
 import { useAppDispatch, useAppSelector } from 'src/store';

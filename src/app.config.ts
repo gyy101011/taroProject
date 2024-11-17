@@ -1,25 +1,31 @@
 export default defineAppConfig({
+
   pages: [
     'pages/index/index',
-    'pages/contribute/contribute',
     'pages/login/login',
+    'pages/contribute/contribute',
     'pages/my/my',
     'pages/notice/notice',
     'pages/noticeDetail/noticeDetail',
     'pages/content/content',
     'pages/search/search',
-    'pages/searchResult/searchResult',
+    'pages/searchResult/searchResult'
   ],
+
   window: {
+
     backgroundTextStyle: 'light',
     navigationBarBackgroundColor: '#fff',
-    navigationBarTitleText: 'WeChat',
+    navigationBarTitleText: 'Wechat',
     navigationBarTextStyle: 'black',
   },
+  //设置 TabBar
   tabBar: {
     color: '#333',
     selectedColor: '#1296db',
+
     backgroundColor: '#fff',
+
     borderStyle: 'white',
     list: [
       {
@@ -42,4 +48,4 @@ export default defineAppConfig({
       },
     ],
   },
-})
+});

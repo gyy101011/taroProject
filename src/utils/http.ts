@@ -39,7 +39,8 @@ export const http = <T>(options: {
               title: res.data.msg || '请求错误',
             })
           }
-        } else {
+        }
+        else {
           // 其他错误 -> 根据后端错误信息轻提示
           Taro.showToast({
             icon: 'none',

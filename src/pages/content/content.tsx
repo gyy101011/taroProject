@@ -3,8 +3,8 @@ import { View, Text } from "@tarojs/components";
 import Taro, { useLoad } from "@tarojs/taro";
 import { useState } from "react";
 import { AtIcon } from "taro-ui";
-import { clearUserInfo } from "src/store/modules/user";
-import { useAppDispatch } from "src/store";
+import { clearUserInfo } from "../../store/modules/user";
+import { useAppDispatch } from "../../store";
 import './content.scss'
 
 
